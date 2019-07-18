@@ -4,12 +4,10 @@ size: .word 10
 NL:	.asciiz "\n"
 .text
 .globl main
-main:
-lw $t3, size
-la $t1, list
-li $t2,0
-prnlp:
-	beq $t2,$t3,prndn
+main:	lw $t3, size
+	la $t1, list
+	li $t2,0
+prnlp:	beq $t2,$t3,prndn
 	lw $a0,($t1)
  	li $v0,1
 	syscall
